@@ -1,0 +1,12 @@
+name: 'Verify Commit Message'
+description: 'Checks if the commit message is linked to a valid issue'
+inputs:
+  github_token:
+    description: 'GitHub Token'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: activity
+  color: green
