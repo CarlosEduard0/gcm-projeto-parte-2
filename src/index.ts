@@ -23,6 +23,10 @@ async function run() {
       return;
     }
 
+    if (issue.state !== 'open') {
+      tools.exit.failure('Linked issue is closed');
+    }
+
     if (!issue.labels.find(x => x.name === 'developing')) {
       tools.exit.failure('Linked issue does not have the label "developing"');
     }

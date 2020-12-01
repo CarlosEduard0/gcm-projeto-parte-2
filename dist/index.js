@@ -15234,6 +15234,9 @@ function run() {
                         tools.exit.failure('Linked issue not found!');
                         return [2 /*return*/];
                     }
+                    if (issue.state !== 'open') {
+                        tools.exit.failure('Linked issue is closed');
+                    }
                     if (!issue.labels.find(function (x) { return x.name === 'developing'; })) {
                         tools.exit.failure('Linked issue does not have the label "developing"');
                     }
